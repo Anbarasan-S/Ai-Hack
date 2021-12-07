@@ -7,5 +7,5 @@ app.use(bodyparser.urlencoded({ extended: true}))
 const img=require('./routes/img');
 const nlp=require('./routes/nlp');
 app.use('/nude',img);
-app.use('/',nlp);
+app.use('/nlp',nlp);
 app.listen(5000,console.log("Listening on port 5000"));

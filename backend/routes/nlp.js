@@ -1,7 +1,7 @@
 const natural=require('natural')
 const express=require('express')
 const router=express.Router();
-router.get('/nlp-Profane',async(req,res)=>{
+router.get('/profane',async(req,res)=>{
     let str=req.query.val;
     str=str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim();
     const words=str.split(' ');
