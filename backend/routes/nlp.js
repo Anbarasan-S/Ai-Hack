@@ -1,5 +1,6 @@
 const natural=require('natural')
 const express=require('express')
+const path=require('path');
 const router=express.Router();
 router.get('/profane',async(req,res)=>{
     let str=req.query.val;
@@ -10,8 +11,8 @@ router.get('/profane',async(req,res)=>{
     for(let i=0;i<words.length;i++){
     const func = async () => {
     return myPromise = new Promise((resolve, reject) => {
-        natural.BayesClassifier.load('/home/anbu/parentalsecure/backend/routes/classifier.json', null, async (err, classifier) => {
-            console.log(classifier.classify(words[i]),words[i]);
+        
+        natural.BayesClassifier.load(path.resolve(__dirname, 'classifier.json'), null, async (err, classifier) => {
             resolve(classifier.classify(words[i]))
         })
     });
