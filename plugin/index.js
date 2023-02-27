@@ -24,7 +24,7 @@ for (let i = 0; i < elements.length; i++) {
     }).each(function () {
       const words = this.textContent;
       (async () => {
-        const data = await postData(`http://15.206.90.91:5000/nlp/profane?val=${words}`)
+        const data = await postData(`http://localhost:5000/nlp/profane?val=${words}`)
         if(data.value!=="continue")
         {
           const arr=data.value;
